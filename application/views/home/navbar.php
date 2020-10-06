@@ -80,8 +80,9 @@
                             </div>             
                             <div class="col-xl-2 col-lg-2 col-md-3">
                                 <div class="header-right-btn f-right d-none d-lg-block">
-                                    <a href="<?php echo base_url();?>main/<?php echo $site_data->Title; ?>/contact" class="btn">Contact Now</a>
-                                </div>
+                                    <a href="<?php echo base_url();?>main/<?php echo $site_data->Title; ?>/contact" class="btn">Register Now</a> 
+
+
                             </div>
                             <!-- Mobile Menu -->
                             <div class="col-12">
