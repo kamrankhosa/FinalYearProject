@@ -50,6 +50,16 @@ if ($this->upload->do_upload('profile')!='') {
 }
 
 }
+public function contact()
+{
+	if ($this->input->post('send')) {
+		$message=$this->input->post('message');
+		$name=$this->input->post('name');
+		$email=$this->input->post('email');
+		$subject=$this->input->post('subject');
+		echo $email;
+	}
+}
 }
 
 

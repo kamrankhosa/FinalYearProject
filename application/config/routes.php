@@ -67,6 +67,12 @@ $route['project_details/(:any)'] = 'home/project_details';
 $route['blog_details/(:any)'] = 'home/blog_details';
 
 
+$route['admin'] = 'admin';
+
+
+
+
+
 
 
 

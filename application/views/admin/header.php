@@ -29,7 +29,7 @@
     <!-- //image logo -->
 
     <div class="logo-icon text-center">
-      <a href="index.html" title="logo"><img src="assets/images/logo.png" alt="logo-icon"> </a>
+      <a href="<?php echo base_url(); ?>admin" title="logo"><img src="<?php echo base_url(); ?>assets/admin/images/logo.png" alt="logo-icon"> </a>
     </div>
     <!-- //logo end -->
 
@@ -37,7 +37,7 @@
 
       <!-- sidebar nav start -->
       <ul class="nav nav-pills nav-stacked custom-nav">
-        <li class="active"><a href="index.html"><i class="fa fa-tachometer"></i><span> Dashboard</span></a>
+        <li class="active"><a href="<?php echo base_url(); ?>admin"><i class="fa fa-tachometer"></i><span> Dashboard</span></a>
         </li>
         <li class="menu-list">
           <a href="#"><i class="fa fa-cogs"></i>
@@ -58,7 +58,7 @@
           </ul>
         </li>
         <li class="menu-list">
-          <a href="#"><i class="fa fa-file"></i>
+          <a href="#"><i class="fa fa-bell-o"></i>
             <span>Blogs <i class="lnr lnr-chevron-right"></i></span></a>
           <ul class="sub-menu-list">
             <li><a href="carousels.html">Bricks Blogs</a> </li>
@@ -115,21 +115,21 @@
                     </div>
                   </li>
                   <li><a href="#" class="grid">
-                      <div class="user_img"><img src="assets/images/avatar1.jpg" alt=""></div>
+                      <div class="user_img"><img src="<?php echo base_url(); ?>assets/admin/images/avatar1.jpg" alt=""></div>
                       <div class="notification_desc">
                         <p>Johnson purchased template</p>
                         <span>Just Now</span>
                       </div>
                     </a></li>
                   <li class="odd"><a href="#" class="grid">
-                      <div class="user_img"><img src="assets/images/avatar2.jpg" alt=""></div>
+                      <div class="user_img"><img src="<?php echo base_url(); ?>assets/admin/images/avatar2.jpg" alt=""></div>
                       <div class="notification_desc">
                         <p>New customer registered </p>
                         <span>1 hour ago</span>
                       </div>
                     </a></li>
                   <li><a href="#" class="grid">
-                      <div class="user_img"><img src="assets/images/avatar3.jpg" alt=""></div>
+                      <div class="user_img"><img src="<?php echo base_url(); ?>assets/admin/images/avatar3.jpg" alt=""></div>
                       <div class="notification_desc">
                         <p>Lorem ipsum dolor sit amet </p>
                         <span>2 hours ago</span>
@@ -152,28 +152,28 @@
                     </div>
                   </li>
                   <li><a href="#" class="grid">
-                      <div class="user_img"><img src="assets/images/avatar1.jpg" alt=""></div>
+                      <div class="user_img"><img src="<?php echo base_url(); ?>assets/admin/images/avatar1.jpg" alt=""></div>
                       <div class="notification_desc">
                         <p>Johnson purchased template</p>
                         <span>Just Now</span>
                       </div>
                     </a></li>
                   <li class="odd"><a href="#" class="grid">
-                      <div class="user_img"><img src="assets/images/avatar2.jpg" alt=""></div>
+                      <div class="user_img"><img src="<?php echo base_url(); ?>assets/admin/images/avatar2.jpg" alt=""></div>
                       <div class="notification_desc">
                         <p>New customer registered </p>
                         <span>1 hour ago</span>
                       </div>
                     </a></li>
                   <li><a href="#" class="grid">
-                      <div class="user_img"><img src="assets/images/avatar3.jpg" alt=""></div>
+                      <div class="user_img"><img src="<?php echo base_url(); ?>assets/admin/images/avatar3.jpg" alt=""></div>
                       <div class="notification_desc">
                         <p>Lorem ipsum dolor sit amet </p>
                         <span>2 hours ago</span>
                       </div>
                     </a></li>
                   <li><a href="#" class="grid">
-                      <div class="user_img"><img src="assets/images/avatar1.jpg" alt=""></div>
+                      <div class="user_img"><img src="<?php echo base_url(); ?>assets/admin/images/avatar1.jpg" alt=""></div>
                       <div class="notification_desc">
                         <p>Johnson purchased template</p>
                         <span>Just Now</span>
@@ -194,7 +194,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3" aria-haspopup="true"
                   aria-expanded="false">
                   <div class="profile_img">
-                    <img src="assets/images/kamikhan.jpg" class="rounded-circle" alt="" />
+                    <img src="<?php echo base_url(); ?>assets/admin/images/kamikhan.jpg" class="rounded-circle" alt="" />
                     <div class="user-active">
                       <span></span>
                     </div>

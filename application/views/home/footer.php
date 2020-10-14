@@ -49,12 +49,11 @@
                                     <!-- Form -->
                                     <div class="footer-form">
                                         <div id="mc_embed_signup">
-                                            <form target="_blank" action="" method="get" class="subscribe_form relative mail_part" novalidate="true">
+                                            <form target="_blank" action="abc.php" method="get" class="subscribe_form relative mail_part" novalidate="">
                                                 <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
                                                 <div class="form-icon">
-                                                    <button style="background-color: red;" type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
-                                                        SUBSCRIBE
-                                                    </button>
+                                                    <input style="background-color: red;" type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm" value="SUBSCRIBE">
+                                                        
                                                 </div>
                                                 <div class="mt-10 info"></div>
                                             </form>
