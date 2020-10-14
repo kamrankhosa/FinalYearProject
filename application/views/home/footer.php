@@ -22,10 +22,10 @@
                                     <div class="footer-tittle">
                                         <h4>Quick Links</h4>
                                         <ul>
-                                            <li><a href="#">About</a></li>
-                                            <li><a href="#">Services</a></li>
+                                            <li><a href="<?php echo base_url();?>about/<?php echo $site_data->Title; ?>">About</a></li>
+                                            <li><a href="<?php echo base_url();?>services/<?php echo $site_data->Title; ?>">Services</a></li>
                                             <li><a href="#">Projects</a></li>
-                                            <li><a href="#">Contact Us</a></li>
+                                            <li><a href="<?php echo base_url();?>main/<?php echo $site_data->Title; ?>/contact">Contact Us</a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -35,11 +35,11 @@
                                     <div class="footer-tittle">
                                         <h4>Contact</h4>
                                         <div class="footer-pera">
-                                            <p class="info1">198 West 21th Street, Suite 721 New York,NY 10010</p>
+                                            <p class="info1"><?php echo $site_data->Address; ?></p>
                                         </div>
                                         <ul>
-                                            <li><a href="#">Phone: +95 (0) 123 456 789</a></li>
-                                            <li><a href="#">Cell: +95 (0) 123 456 789</a></li>
+                                            <li><a href="tel:<?php echo $site_data->Phone_number; ?>">Phone: +<?php echo $site_data->Phone_number; ?></a></li>
+                                            <li><a href="mailto:<?php echo $site_data->email; ?>">Email: <?php echo $site_data->email; ?></a></li>
                                         </ul>
                                     </div>
                                 </div>
@@ -49,11 +49,11 @@
                                     <!-- Form -->
                                     <div class="footer-form">
                                         <div id="mc_embed_signup">
-                                            <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative mail_part" novalidate="true">
+                                            <form target="_blank" action="" method="get" class="subscribe_form relative mail_part" novalidate="true">
                                                 <input type="email" name="EMAIL" id="newsletter-form-email" placeholder=" Email Address " class="placeholder hide-on-focus" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Email Address '">
                                                 <div class="form-icon">
-                                                    <button type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
-                                                        SIGN UP
+                                                    <button style="background-color: red;" type="submit" name="submit" id="newsletter-submit" class="email_icon newsletter-submit button-contactForm">
+                                                        SUBSCRIBE
                                                     </button>
                                                 </div>
                                                 <div class="mt-10 info"></div>
@@ -122,6 +122,12 @@
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="<?php echo base_url();?>assets/home/js/plugins.js"></script>
         <script src="<?php echo base_url();?>assets/home/js/main.js"></script>
-        
+        <script>
+            window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove(); 
+            });
+        }, 4000);
+        </script>
     </body>
 </html>

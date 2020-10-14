@@ -57,22 +57,43 @@
                                     <nav> 
                                         <ul id="navigation">                                                                                                                   
                                             <li><a href="<?php echo base_url();?>main/<?php echo $site_data->Title; ?>">Home</a></li>
-                                            <li><a href="<?php echo base_url();?>about/<?php echo $site_data->Title; ?>">About</a></li>
-                                            <li><a href="project.html">Projects</a></li>
-                                            <li><a href="<?php echo base_url();?>services/<?php echo $site_data->Title; ?>">Services</a></li>
-                                            <li><a href="blog.html">Blog</a>
-                                                <ul class="submenu">
+                                            <li><a href="<?php echo base_url();?>services/<?php echo $site_data->Title; ?>">
+                                                <?php  
+                                            if ($site_data->Title=='cement and concrete') {?>
+                                                Material
+
+                                          <?php  }else{?>
+                                                <?php echo $site_data->Title;}?>
+                                           <?php if ($site_data->Title=='bricks') {?>
+                                                Providers
+                                          <?php  }
+                                        elseif ($site_data->Title=='construction') {?>
+                                                Masters
+                                          <?php  }
+                                         elseif ($site_data->Title=='cement and concrete') {?>
+                                                Suppliers
+
+                                          <?php  }
+                                          else
+                                          {
+                                            echo "";
+                                          }
+                                        ?></a></li>
+                                         <li><a href="<?php echo base_url();?>projects/<?php echo $site_data->Title; ?>">Projects</a></li>
+                                            <li><a href="<?php echo base_url();?>blogs/<?php echo $site_data->Title; ?>">Blog</a>
+                                              <!--   <ul class="submenu">
                                                     <li><a href="blog.html">Blog</a></li>
                                                     <li><a href="single-blog.html">Blog Details</a></li>
-                                                </ul>
+                                                </ul> -->
                                             </li>
-                                            <li><a href="#">Pages</a>
+                                           <!--  <li><a href="#">Pages</a>
                                                 <ul class="submenu">
                                                     <li><a href="elements.html">Element</a></li>
                                                     <li><a href="project_details.html">Projects Details</a></li>
                                                     <li><a href="services_details.html">Services Details</a></li>
                                                 </ul>
-                                            </li>
+                                            </li> -->
+                                            <li><a href="<?php echo base_url();?>about/<?php echo $site_data->Title; ?>">About</a></li>
                                             <li><a href="<?php echo base_url();?>main/<?php echo $site_data->Title; ?>/contact">Contact</a></li>
                                         </ul>
                                     </nav>
@@ -80,7 +101,7 @@
                             </div>             
                             <div class="col-xl-2 col-lg-2 col-md-3">
                                 <div class="header-right-btn f-right d-none d-lg-block">
-                                    <a href="<?php echo base_url();?>main/<?php echo $site_data->Title; ?>/contact" class="btn">Register Now</a> 
+                                    <a href="<?php echo base_url();?>main/<?php echo $site_data->Title; ?>/register" class="btn">Register Now</a> 
 
 
                             </div>

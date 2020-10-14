@@ -86,7 +86,7 @@
                                 <img src="<?php echo base_url();?>assets/home/img/service/<?php echo $service->Image; ?>" alt="">
                             </div>
                             <div class="service-cap">
-                                <h4><a href="services_details.html"><?php echo $service->Name; ?></a></h4>
+                                <h4><a href="<?php echo base_url();?>details/<?php echo $site_data->Title; ?>?id=<?php echo base64_encode($service->ID); ?>"><?php echo $service->Name; ?></a></h4>
                                 <a href="<?php echo base_url();?>details/<?php echo $site_data->Title; ?>?id=<?php echo base64_encode($service->ID); ?>" class="more-btn">Read More <i class="ti-plus"></i></a>
                             </div>
                             <div class="service-icon">
@@ -112,15 +112,15 @@
                         <span class="back-text">About us</span>
                     </div>
                     <div class="support-caption">
-                        <p class="pera-top">Mollit anim laborum duis au dolor in voluptcate velit ess cillum dolore eu lore dsu quality mollit anim laborumuis au dolor in voluptate velit cillu.</p>
-                        <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim.</p>
-                        <a href="about.html" class="btn red-btn2">read more</a>
+                        <p class="pera-top"><?php echo substr($about_section->Description, 0,150); ?></p>
+                        <p><?php echo substr($about_section->Description, 151); ?></p>
+                        <a href="<?php echo base_url();?>about/<?php echo $site_data->Title; ?>" class="btn red-btn2">read more</a>
                     </div>
                 </div>
                 <div class="right-content">
                     <!-- img -->
                     <div class="right-img">
-                        <img src="<?php echo base_url();?>assets/home/img/gallery/safe_in.png" alt="">
+                        <img src="<?php echo base_url();?>assets/home/img/gallery/<?php echo $about_section->Image; ?>" alt="">
                     </div>
                     <div class="support-img-cap text-center">
                         <span>1994</span>
@@ -169,78 +169,22 @@
                             <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">           
                                 <div class="project-caption">
                                     <div class="row">
+                                        <?php foreach ($projects_section as $project) { ?>
                                         <div class="col-lg-4 col-md-6">
                                             <div class="single-project mb-30">
                                                 <div class="project-img">
-                                                    <img src="<?php echo base_url();?>assets/home/img/gallery/project1.png" alt="">
+                                                    <img src="<?php echo base_url();?>assets/home/img/gallery/<?php echo $project->Image ?>" alt="">
                                                 </div>
                                                 <div class="project-cap">
-                                                    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>
-                                                    <h4><a href="project_details.html">Floride Chemicals</a></h4>
-                                                    <h4><a href="project_details.html">Factory</a></h4>
+                                                    <a href="<?php echo base_url(); ?>project_details/<?php echo $site_data->Title; ?>?id=<?php echo base64_encode($project->ID); ?>" class="plus-btn"><i class="ti-plus"></i></a>
+                                                    <h4><a href="<?php echo base_url(); ?>project_details/<?php echo $site_data->Title; ?>?id=<?php echo base64_encode($project->ID); ?>"><?php echo $project->Name ?></a></h4>
+                                                    <!-- <h4><a href="project_details.html">Factory</a></h4> -->
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="single-project mb-30">
-                                                <div class="project-img">
-                                                    <img src="<?php echo base_url();?>assets/home/img/gallery/project2.png" alt="">
-                                                </div>
-                                                <div class="project-cap">
-                                                    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>
-                                                   <h4><a href="project_details.html">Floride Chemicals</a></h4>
-                                                    <h4><a href="project_details.html">Factory</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="single-project mb-30">
-                                                <div class="project-img">
-                                                    <img src="<?php echo base_url();?>assets/home/img/gallery/project3.png" alt="">
-                                                </div>
-                                                <div class="project-cap">
-                                                    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>
-                                                   <h4><a href="project_details.html">Floride Chemicals</a></h4>
-                                                    <h4><a href="project_details.html">Factory</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="single-project mb-30">
-                                                <div class="project-img">
-                                                    <img src="<?php echo base_url();?>assets/home/img/gallery/project4.png" alt="">
-                                                </div>
-                                                <div class="project-cap">
-                                                    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>
-                                                   <h4><a href="project_details.html">Floride Chemicals</a></h4>
-                                                    <h4><a href="project_details.html">Factory</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="single-project mb-30">
-                                                <div class="project-img">
-                                                    <img src="<?php echo base_url();?>assets/home/img/gallery/project5.png" alt="">
-                                                </div>
-                                                <div class="project-cap">
-                                                    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>
-                                                   <h4><a href="project_details.html">Floride Chemicals</a></h4>
-                                                    <h4><a href="project_details.html">Factory</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6">
-                                            <div class="single-project mb-30">
-                                                <div class="project-img">
-                                                    <img src="<?php echo base_url();?>assets/home/img/gallery/project6.png" alt="">
-                                                </div>
-                                                <div class="project-cap">
-                                                    <a href="project_details.html" class="plus-btn"><i class="ti-plus"></i></a>
-                                                   <h4><a href="project_details.html">Floride Chemicals</a></h4>
-                                                    <h4><a href="project_details.html">Factory</a></h4>
-                                                </div>
-                                            </div>
-                                        </div>
+
+                                    <?php } ?>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -582,7 +526,7 @@
                                     <span class="back-text">Let`s chat</span>
                                 </div>
                                 <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim.</p>
-                                <a href="#" class="white-btn">read more</a>
+                                <a href="<?php echo base_url();?>main/<?php echo $site_data->Title; ?>/contact/" class="white-btn">read more</a>
                             </div>
                         </div>
                     </div>
@@ -599,11 +543,26 @@
                             <div class="count-clients">
                                 <div class="single-counter">
                                     <div class="count-number">
-                                        <span class="counter">34</span>
+                                        <span class="counter"><?php echo count_users($site_data->Title); ?></span>
                                     </div>
                                     <div class="count-text">
-                                        <p>Machinery</p>
-                                        <h5>Tools</h5>
+                                        <p><?php echo $site_data->Title;?> </p>
+                                           <?php if ($site_data->Title=='bricks') {?>
+                                                <h5>Providers</h5>
+                                          <?php  }
+                                        elseif ($site_data->Title=='construction') {?>
+                                                <h5>Masters</h5>
+                                          <?php  }
+                                         elseif ($site_data->Title=='cement and concrete') {?>
+                                                <h5>Suppliers</h5>
+
+                                          <?php  }
+                                          else
+                                          {
+                                            echo "";
+                                          }
+                                        ?>
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -612,11 +571,11 @@
                             <div class="count-clients">
                                 <div class="single-counter">
                                     <div class="count-number">
-                                        <span class="counter">76</span>
+                                        <span class="counter"><?php echo count_projects($site_data->Title); ?></span>
                                     </div>
                                     <div class="count-text">
-                                        <p>Machinery</p>
-                                        <h5>Tools</h5>
+                                        <p>Projects</p>
+                                        <h5>Completed</h5>
                                     </div>
                                 </div>
                             </div>
@@ -625,11 +584,11 @@
                             <div class="count-clients">
                                 <div class="single-counter">
                                     <div class="count-number">
-                                        <span class="counter">08</span>
+                                        <span class="counter"><?php echo count_team_members($site_data->Title); ?></span>
                                     </div>
                                     <div class="count-text">
-                                        <p>Machinery</p>
-                                        <h5>Tools</h5>
+                                        <p>Team</p>
+                                        <h5>Members</h5>
                                     </div>
                                 </div>
                             </div>
@@ -655,39 +614,20 @@
                 </div>
                 <div class="row">
                     <!-- single Tem -->
+                    <?php foreach ($team_members as $member) { ?>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
                         <div class="single-team mb-30">
                             <div class="team-img">
-                                <img src="<?php echo base_url();?>assets/home/img/team/team1.png" alt="">
+                                <img src="<?php echo base_url();?>assets/home/img/team/<?php echo $member->Image ?>" alt="">
                             </div>
                             <div class="team-caption">
-                                <span>UX Designer</span>
-                                <h3>Ethan Welch</h3>
+                                <span><?php echo $member->Designation ?></span>
+                                <h3><?php echo $member->Name ?></h3>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                        <div class="single-team mb-30">
-                            <div class="team-img">
-                                <img src="<?php echo base_url();?>assets/home/img/team/team2.png" alt="">
-                            </div>
-                            <div class="team-caption">
-                                <span>UX Designer</span>
-                                <h3>Ethan Welch</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                        <div class="single-team mb-30">
-                            <div class="team-img">
-                                <img src="<?php echo base_url();?>assets/home/img/team/team3.png" alt="">
-                            </div>
-                            <div class="team-caption">
-                                <span>UX Designer</span>
-                                <h3>Ethan Welch</h3>
-                            </div>
-                        </div>
-                    </div>
+                <?php } ?>
+                   
                 </div>
             </div>
         </div>
@@ -710,6 +650,7 @@
                     <div class="col-xl-10 col-lg-11 col-md-10 offset-xl-1">
                         <div class="h1-testimonial-active">
                             <!-- Single Testimonial -->
+                            <?php foreach ($testominals as $testominal) { ?>
                             <div class="single-testimonial">
                                  <!-- Testimonial Content -->
                                 <div class="testimonial-caption ">
@@ -719,38 +660,19 @@
                                         <path fill-rule="evenodd"  stroke-width="1px" stroke="rgb(255, 95, 19)" fill-opacity="0" fill="rgb(0, 0, 0)"
                                         d="M82.623,59.861 L48.661,59.861 L48.661,25.988 L59.982,3.406 L76.963,3.406 L65.642,25.988 L82.623,25.988 L82.623,59.861 ZM3.377,25.988 L14.698,3.406 L31.679,3.406 L20.358,25.988 L37.340,25.988 L37.340,59.861 L3.377,59.861 L3.377,25.988 Z"/>
                                         </svg>
-                                        <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim. Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjn.</p>
+                                        <p><?php echo $testominal->Message;?></p>
                                     </div>
                                     <!-- founder -->
                                     <div class="testimonial-founder d-flex align-items-center">
                                        <div class="founder-text">
-                                            <span>Jessya Inn</span>
-                                            <p>Co Founder</p>
+                                            <span><?php echo $testominal->Name;?></span>
+                                            <p><?php echo $testominal->Designation;?></p>
                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Single Testimonial -->
-                            <div class="single-testimonial">
-                                 <!-- Testimonial Content -->
-                                <div class="testimonial-caption ">
-                                    <div class="testimonial-top-cap">
-                                        <!-- SVG icon -->
-                                        <svg xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink"width="86px" height="63px">
-                                        <path fill-rule="evenodd"  stroke-width="1px" stroke="rgb(255, 95, 19)" fill-opacity="0" fill="rgb(0, 0, 0)"
-                                        d="M82.623,59.861 L48.661,59.861 L48.661,25.988 L59.982,3.406 L76.963,3.406 L65.642,25.988 L82.623,25.988 L82.623,59.861 ZM3.377,25.988 L14.698,3.406 L31.679,3.406 L20.358,25.988 L37.340,25.988 L37.340,59.861 L3.377,59.861 L3.377,25.988 Z"/>
-                                        </svg>
-                                        <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim. Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjn.</p>
-                                    </div>
-                                    <!-- founder -->
-                                    <div class="testimonial-founder d-flex align-items-center">
-                                       <div class="founder-text">
-                                            <span>Jessya Inn</span>
-                                            <p>Co Founder</p>
-                                       </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <?php } ?>
+                           
                         </div>
                     </div>
                </div>
@@ -772,46 +694,31 @@
                     </div>
                 </div>
                 <div class="row">
+                    <?php foreach ($latest_new as $news) { ?>
                     <div class="col-xl-6 col-lg-6 col-md-6">
                         <!-- single-news -->
                         <div class="single-news mb-30">
                             <div class="news-img">
-                                <img src="<?php echo base_url();?>assets/home/img/david/david_1.png" alt="">
+                                <img src="<?php echo base_url();?>assets/home/img/david/<?php echo $news->Image; ?>" alt="">
                                 <div class="news-date text-center">
-                                    <span>24</span>
+                                    <span><?php 
+                                    // $added=date_format('Y m d',strtotime($news->Added_date));
+                                    echo  $news->Added_date;
+                                    ?></span>
                                     <p>Now</p>
                                 </div>
                             </div>
                             <div class="news-caption">
                                 <ul class="david-info">
-                                    <li> | &nbsp; &nbsp;  Porperties</li>
+                                    <li> | &nbsp; &nbsp;  <?php echo $site_data->Title; ?></li>
                                 </ul>
-                                <h2><a href="single-blog.html">Footprints in Time is perfect
-                                    House in Kurashiki</a></h2>
-                                <a href="single-blog.html" class="d-btn">Read more »</a>
+                                <h2><a href="<?php echo base_url();?>blog_details/<?php echo $site_data->Title; ?>?id=<?php echo base64_encode($news->ID); ?>"><?php echo $news->Name; ?></a></h2>
+                                <a href="<?php echo base_url();?>blog_details/<?php echo $site_data->Title; ?>?id=<?php echo base64_encode($news->ID); ?>" class="d-btn">Read more »</a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-6 col-lg-6 col-md-6">
-                        <!-- single-news -->
-                        <div class="single-news mb-30">
-                            <div class="news-img">
-                                <img src="<?php echo base_url();?>assets/home/img/david/david_2.png" alt="">
-                                <div class="news-date text-center">
-                                    <span>24</span>
-                                    <p>Now</p>
-                                </div>
-                            </div>
-                            <div class="news-caption">
-                                <ul class="david-info">
-                                    <li> | &nbsp; &nbsp;  Porperties</li>
-                                </ul>
-                                <h2><a href="single-blog.html">Footprints in Time is perfect
-                                    House in Kurashiki</a></h2>
-                                <a href="single-blog.html" class="d-btn">Read more » </a>
-                            </div>
-                        </div>
-                    </div>
+                <?php } ?>
+                    
                </div>
             </div>
         </div>

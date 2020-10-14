@@ -33,16 +33,16 @@
                         </div>
                         <span class="back-text">About us</span>
                     </div>
-                    <div class="support-caption">
-                        <p class="pera-top">Mollit anim laborum duis au dolor in voluptcate velit ess cillum dolore eu lore dsu quality mollit anim laborumuis au dolor in voluptate velit cillu.</p>
-                        <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim.</p>
-                        <a href="about.html" class="btn red-btn2">read more</a>
+                     <div class="support-caption">
+                        <p class="pera-top"><?php echo substr($about_section->Description, 0,150); ?></p>
+                        <p><?php echo substr($about_section->Description, 151); ?></p>
+                        <a href="<?php echo base_url();?>about/<?php echo $site_data->Title; ?>" class="btn red-btn2">read more</a>
                     </div>
                 </div>
                 <div class="right-content">
                     <!-- img -->
                     <div class="right-img">
-                        <img src="<?php echo base_url();?>assets/home/img/gallery/safe_in.png" alt="">
+                        <img src="<?php echo base_url();?>assets/home/img/gallery/<?php echo $about_section->Image; ?>" alt="">
                     </div>
                     <div class="support-img-cap text-center">
                         <span>1994</span>
@@ -70,6 +70,7 @@
                     <div class="col-xl-10 col-lg-11 col-md-10 offset-xl-1">
                         <div class="h1-testimonial-active">
                             <!-- Single Testimonial -->
+                            <?php foreach ($testominals as $testominal) { ?>
                             <div class="single-testimonial">
                                  <!-- Testimonial Content -->
                                 <div class="testimonial-caption ">
@@ -79,38 +80,19 @@
                                         <path fill-rule="evenodd"  stroke-width="1px" stroke="rgb(255, 95, 19)" fill-opacity="0" fill="rgb(0, 0, 0)"
                                         d="M82.623,59.861 L48.661,59.861 L48.661,25.988 L59.982,3.406 L76.963,3.406 L65.642,25.988 L82.623,25.988 L82.623,59.861 ZM3.377,25.988 L14.698,3.406 L31.679,3.406 L20.358,25.988 L37.340,25.988 L37.340,59.861 L3.377,59.861 L3.377,25.988 Z"/>
                                         </svg>
-                                        <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim. Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjn.</p>
+                                        <p><?php echo $testominal->Message;?></p>
                                     </div>
                                     <!-- founder -->
                                     <div class="testimonial-founder d-flex align-items-center">
                                        <div class="founder-text">
-                                            <span>Jessya Inn</span>
-                                            <p>Co Founder</p>
+                                            <span><?php echo $testominal->Name;?></span>
+                                            <p><?php echo $testominal->Designation;?></p>
                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Single Testimonial -->
-                            <div class="single-testimonial">
-                                 <!-- Testimonial Content -->
-                                <div class="testimonial-caption ">
-                                    <div class="testimonial-top-cap">
-                                        <!-- SVG icon -->
-                                        <svg xmlns="http://www.w3.org/2000/svg"xmlns:xlink="http://www.w3.org/1999/xlink"width="86px" height="63px">
-                                        <path fill-rule="evenodd"  stroke-width="1px" stroke="rgb(255, 95, 19)" fill-opacity="0" fill="rgb(0, 0, 0)"
-                                        d="M82.623,59.861 L48.661,59.861 L48.661,25.988 L59.982,3.406 L76.963,3.406 L65.642,25.988 L82.623,25.988 L82.623,59.861 ZM3.377,25.988 L14.698,3.406 L31.679,3.406 L20.358,25.988 L37.340,25.988 L37.340,59.861 L3.377,59.861 L3.377,25.988 Z"/>
-                                        </svg>
-                                        <p>Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjnt occa cupidatat non aute iruxvfg dhjinulpadeserunt mollitemnth incididbnt ut;o5tu layjobore mofllit anim. Mollit anim laborum.Dvcuis aute iruxvfg dhjkolohr in re voluptate velit esscillumlore eu quife nrulla parihatur. Excghcepteur sfwsignjn.</p>
-                                    </div>
-                                    <!-- founder -->
-                                    <div class="testimonial-founder d-flex align-items-center">
-                                       <div class="founder-text">
-                                            <span>Jessya Inn</span>
-                                            <p>Co Founder</p>
-                                       </div>
-                                    </div>
-                                </div>
-                            </div>
+                        <?php } ?>
+                           
                         </div>
                     </div>
                </div>
@@ -133,39 +115,20 @@
                 </div>
                 <div class="row">
                     <!-- single Tem -->
+                     <?php foreach ($team_members as $member) { ?>
                     <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
                         <div class="single-team mb-30">
                             <div class="team-img">
-                                <img src="<?php echo base_url();?>assets/home/img/team/team1.png" alt="">
+                                <img src="<?php echo base_url();?>assets/home/img/team/<?php echo $member->Image ?>" alt="">
                             </div>
                             <div class="team-caption">
-                                <span>UX Designer</span>
-                                <h3>Ethan Welch</h3>
+                                <span><?php echo $member->Designation ?></span>
+                                <h3><?php echo $member->Name ?></h3>
                             </div>
                         </div>
                     </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                        <div class="single-team mb-30">
-                            <div class="team-img">
-                                <img src="<?php echo base_url();?>assets/home/img/team/team2.png" alt="">
-                            </div>
-                            <div class="team-caption">
-                                <span>UX Designer</span>
-                                <h3>Ethan Welch</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-">
-                        <div class="single-team mb-30">
-                            <div class="team-img">
-                                <img src="<?php echo base_url();?>assets/home/img/team/team3.png" alt="">
-                            </div>
-                            <div class="team-caption">
-                                <span>UX Designer</span>
-                                <h3>Ethan Welch</h3>
-                            </div>
-                        </div>
-                    </div>
+                <?php } ?>
+                  
                 </div>
             </div>
         </div>

@@ -14,6 +14,10 @@ class About extends CI_Controller
 	public function index(){
 		$title=str_replace('%20', ' ', strtolower($this->uri->segment(2)));
 		$result['site_data']=$this->site_model->index($title);
+		$result['team_members']=$this->site_model->team_members($title);
+		$result['testominals']=$this->site_model->testominals($title);
+		$result['about_section']=$this->site_model->about_section($title);
+		
 		$this->load->view('home/about',$result);
 	}
 	public function test()
