@@ -35,11 +35,6 @@
                   <div class="blog_details">
                      <h2><?php echo $service->Name; ?>
                      </h2>
-                     <ul class="blog-info-link mt-3 mb-4">
-                        <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                        <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                     </ul>
-                     
                         <?php echo $service->Description; ?>
                    
                      <div class="quote-wrapper">
@@ -64,7 +59,7 @@
                         <li><a href="#"><i class="fa fa-behance"></i></a></li>
                      </ul>
                   </div>
-                  <div class="navigation-area">
+                 <!--  <div class="navigation-area">
                      <div class="row">
                         <div
                            class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
@@ -105,7 +100,7 @@
                            </div>
                         </div>
                      </div>
-                  </div>
+                  </div> -->
                </div>
                <div class="blog-author">
                   <div class="media align-items-center">
@@ -291,7 +286,7 @@
                      </ul>
                   </aside>
                   <aside class="single_sidebar_widget popular_post_widget">
-                     <h3 class="widget_title">Recent Work</h3>
+                     <h3 class="widget_title">Related Service Providers</h3>
                      <div class="media post_item">
                         <img src="<?php echo base_url();?>assets/home/img/post/post_1.png" alt="post">
                         <div class="media-body">

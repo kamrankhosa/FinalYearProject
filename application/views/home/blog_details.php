@@ -1,16 +1,18 @@
  <?php require 'header.php'; ?>
  <?php require 'navbar.php'; ?>
+ <?php foreach ($details as $blog_detail) {?>
+
 <div class="slider-area ">
-		<div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="assets/img/hero/about.jpg">
+		<div class="single-slider hero-overly slider-height2 d-flex align-items-center" data-background="<?php echo  base_url(); ?>assets/home/img/hero/about.jpg">
 			<div class="container">
 				<div class="row">
 					<div class="col-xl-12">
 						<div class="hero-cap pt-100">
-							<h2>Single Blog</h2>
+							<h2><?php echo $blog_detail->Name; ?></h2>
 							<nav aria-label="breadcrumb ">
 								<ol class="breadcrumb">
 								<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-								<li class="breadcrumb-item"><a href="#">Single Blog</a></li> 
+								<li class="breadcrumb-item"><a href="#"><?php echo $blog_detail->Name; ?></a></li> 
 								</ol>
 							</nav>
 						</div>
@@ -30,12 +32,11 @@
                      <img class="img-fluid" src="assets/img/blog/single_blog_1.png" alt="">
                   </div>
                   <div class="blog_details">
-                     <h2>Second divided from form fish beast made every of seas
-                        all gathered us saying he our
+                     <h2><?php echo $blog_detail->Name; ?>
                      </h2>
                      <ul class="blog-info-link mt-3 mb-4">
-                        <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                        <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                        <li><a href="#"><i class="fa fa-user"></i> <?php echo $site_data->Title; ?></a></li>
+                        <!-- <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li> -->
                      </ul>
                      <p class="excert">
                         MCSE boot camps have its supporters and its detractors. Some people do not understand why you
@@ -69,6 +70,7 @@
                      </p>
                   </div>
                </div>
+            <?php } ?>
                <div class="navigation-top">
                   <div class="d-sm-flex justify-content-between text-center">
                      <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
