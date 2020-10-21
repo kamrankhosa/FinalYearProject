@@ -24,7 +24,7 @@
                                         <ul>
                                             <li><a href="<?php echo base_url();?>about/<?php echo $site_data->Title; ?>">About</a></li>
                                             <li><a href="<?php echo base_url();?>services/<?php echo $site_data->Title; ?>">Services</a></li>
-                                            <li><a href="#">Projects</a></li>
+                                            <li><a href="<?php echo base_url();?>projects/<?php echo $site_data->Title; ?>">Projects</a></li>
                                             <li><a href="<?php echo base_url();?>main/<?php echo $site_data->Title; ?>/contact">Contact Us</a></li>
                                         </ul>
                                     </div>

@@ -5,8 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Banado - Dashboard</title>
+  <link rel="shortcut icon" type="image/x-icon" href="<?php echo base_url();?>assets/home/img/favicon.ico">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/css/style-starter.css">
-  <link href="//fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/admin/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/admin/plugins/bootstrap/css/bootstrap.css" />
+  <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700,800,900&display=swap" rel="stylesheet">
 </head>
 <body class="sidebar-menu-collapsed">
   <div class="se-pre-con"></div>
@@ -16,7 +19,7 @@
 
     <!-- logo start -->
     <div class="logo">
-      <h1><a href="index.html">Banado</a></h1>
+      <h1><a href="<?php echo base_url();?>admin">Banado</a></h1>
     </div>
 
   <!-- if logo is image enable this -->
@@ -52,18 +55,27 @@
           <a href="#"><i class="fa fa-users"></i>
             <span>Users <i class="lnr lnr-chevron-right"></i></span></a>
           <ul class="sub-menu-list">
-            <li><a href="carousels.html">Bricks Makers</a> </li>
-            <li><a href="cards.html">Construction Masters</a> </li>
-            <li><a href="people.html">Cement & Concrete Supliers</a></li>
+            <li><a href="<?php echo base_url() ?>admin/users/bricks">Bricks Makers</a> </li>
+            <li><a href="<?php echo base_url() ?>admin/users/construction">Construction Masters</a> </li>
+            <li><a href="<?php echo base_url() ?>admin/users/cement and concrete">Cement & Concrete Supliers</a></li>
           </ul>
         </li>
         <li class="menu-list">
           <a href="#"><i class="fa fa-bell-o"></i>
             <span>Blogs <i class="lnr lnr-chevron-right"></i></span></a>
           <ul class="sub-menu-list">
-            <li><a href="carousels.html">Bricks Blogs</a> </li>
-            <li><a href="cards.html">Construction Blogs</a> </li>
-            <li><a href="people.html">Cement & Concrete Blogs</a></li>
+            <li><a href="<?php echo base_url() ?>admin/blogs/bricks">Bricks Blogs</a> </li>
+            <li><a href="<?php echo base_url() ?>admin/blogs/construction">Construction Blogs</a> </li>
+            <li><a href="<?php echo base_url() ?>admin/blogs/cement and concrete">Cement & Concrete Blogs</a></li>
+          </ul>
+        </li>
+         <li class="menu-list">
+          <a href="#"><i class="fa fa-clone"></i>
+            <span>Projects <i class="lnr lnr-chevron-right"></i></span></a>
+          <ul class="sub-menu-list">
+            <li><a href="<?php echo base_url() ?>admin/blogs/#">Bricks projects</a> </li>
+            <li><a href="<?php echo base_url() ?>admin/blogs/#">Construction projects</a> </li>
+            <li><a href="<?php echo base_url() ?>admin/blogs/#">Cement & Concrete projects</a></li>
           </ul>
         </li>
         <li class="menu-list">
@@ -194,7 +206,7 @@
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="dropdownMenu3" aria-haspopup="true"
                   aria-expanded="false">
                   <div class="profile_img">
-                    <img src="<?php echo base_url(); ?>assets/admin/images/kamikhan.jpg" class="rounded-circle" alt="" />
+                    <img src="<?php echo base_url(); ?>assets/admin/images/<?php echo $admin->Image; ?>" class="rounded-circle" alt="" />
                     <div class="user-active">
                       <span></span>
                     </div>
@@ -202,12 +214,12 @@
                 </a>
                 <ul class="dropdown-menu drp-mnu" aria-labelledby="dropdownMenu3">
                   <li class="user-info">
-                    <h5 class="user-name">Kami khan</h5>
+                    <h5 class="user-name"><?php echo $admin->Name; ?></h5>
                     <span class="status ml-2">Available</span>
                   </li>
                   <li> <a href="#"><i class="lnr lnr-user"></i>My Profile</a> </li>
                   <li> <a href="#"><i class="lnr lnr-cog"></i>Setting</a> </li>
-                  <li class="logout"> <a href="#sign-up.html"><i class="fa fa-power-off"></i> Logout</a> </li>
+                  <li class="logout"> <a href="<?php echo base_url(); ?>admin/logout"><i class="fa fa-power-off"></i> Logout</a> </li>
                 </ul>
               </li>
             </ul>

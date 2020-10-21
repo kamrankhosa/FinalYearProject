@@ -23,6 +23,8 @@ class Home extends CI_Controller
 		$result['team_members']=$this->site_model->team_members($title);
 		$result['testominals']=$this->site_model->testominals($title);
 		$result['latest_new']=$this->site_model->latest_new($title);
+		$result['categories']=$this->site_model->categories($title);
+
 		// print_r($_SERVER['HTTP_REFERER']);
 		// print_r($result['latest_new']);
 		// exit();
@@ -57,6 +59,8 @@ class Home extends CI_Controller
 		$title=str_replace('%20', ' ', strtolower($this->uri->segment(2)));
 		$result['site_data']=$this->site_model->index($title);
 		$result['projects']=$this->site_model->projects($title);
+		$result['projects_section']=$this->site_model->projects_section($title);
+		$result['categories']=$this->site_model->categories($title);
 		$this->load->view('home/projects',$result);
 	}
 	function project_details(){
@@ -66,7 +70,7 @@ class Home extends CI_Controller
 		$result['details']=project_details($id)->result();
 		$this->load->view('home/project_details',$result);
 	}
-		function news(){
+	function news(){
 		$title=str_replace('%20', ' ', strtolower($this->uri->segment(2)));
 		$result['site_data']=$this->site_model->index($title);
 		$result['news']=$this->site_model->news($title);
@@ -84,6 +88,15 @@ class Home extends CI_Controller
 		$result['site_data']=$this->site_model->index($title);
 		$this->load->view('home/register',$result);
 	}
+
+	function search_blogs(){
+		$title=str_replace('%20', ' ', strtolower($this->uri->segment(2)));
+		$searching=$this->input->get('searching');
+		$result['site_data']=$this->site_model->index($title);
+		$result['news']=$this->site_model->search_blogs($title,$searching);
+		$this->load->view('home/blogs',$result);
+		
+}
 }
 
 

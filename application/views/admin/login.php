@@ -20,7 +20,7 @@
     <div class="container-fluid content-top-gap col-lg-6" style="text-align: center;">
         <section class="forms">
         
-            <div class="card card_border py-2 mb-4">
+            <div class="card card_border py-2 mb-4 jumbotron">
                 <div class="cards__heading">
                     <h3>Admin Login <span></span></h3>
                 </div>
@@ -36,8 +36,8 @@
                         <div class="form-group row">
                             <label for="inputPassword3" class="col-sm-3 col-form-label input__label">Password</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control input-style" id="inputPassword3"
-                                    placeholder="Password" name="password">
+                                <input type="password" class="form-control input-style" id="inputPassword3" placeholder="Password" name="password">
+
                             </div>
                         </div>
                         <div class="form-group row">

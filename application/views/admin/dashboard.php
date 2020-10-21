@@ -14,8 +14,7 @@
       </ol>
     </nav>
     <div class="welcome-msg pt-3 pb-4">
-      <h1>Hi <span class="text-primary">John</span>, Welcome back</h1>
-      <p>Very detailed & featured admin.</p>
+      <h1>Hi <span class="text-primary"><?php echo $admin->Name; ?></span>, Welcome back</h1>
     </div>
 
     <!-- statistics data -->
@@ -52,7 +51,7 @@
               <div class="card card_border border-primary-top p-4">
                 <i class="lnr lnr-cart"> </i>
                 <h3 class="text-danger number">1,250k</h3>
-                <p class="stat-text">Team Tembers</p>
+                <p class="stat-text">Total Projects</p>
               </div>
             </div>
           </div>

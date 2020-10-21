@@ -9,7 +9,7 @@
 				<div class="row">
 					<div class="col-lg-2 col-md-2">
 					</div>
-					<div class="col-lg-8 col-md-8" style="box-shadow: 5px 5px 5px 5px transparent;">
+					<div class="col-lg-8 col-md-8 jumbotron" style="box-shadow: 5px 5px 5px 5px transparent;">
 						<h3 class="mb-30 text-center">SIGN UP HERE </h3>
 						<?php if (!empty($this->session->userdata('success'))) {?>
 						<div class="alert alert-success text-danger" role="alert">

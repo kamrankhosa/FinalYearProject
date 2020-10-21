@@ -66,14 +66,8 @@ $route['blogs/(:any)'] = 'home/news';
 $route['project_details/(:any)'] = 'home/project_details';
 $route['blog_details/(:any)'] = 'home/blog_details';
 
+$route['register/(:any)/search_blogs'] = 'home/search_blogs';
+$route['register/(:any)/news_later'] = 'register/news_later';
 
 $route['admin'] = 'admin';
-
-
-
-
-
-
-
-
-
+$route['admin/users'] = 'admin/users';

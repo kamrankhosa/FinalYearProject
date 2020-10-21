@@ -41,6 +41,13 @@ class Site_model extends CI_Model
 		return $this->db->query("SELECT * FROM tblnews WHERE Type='$title' ORDER BY ID DESC")->result();
 		
 	}
+	function categories($title){
+		return $this->db->query("SELECT Category,Type FROM tblprojects WHERE Type='$title' ORDER BY ID DESC")->result();
+	}
+	function search_blogs($title,$searching)
+	{
+		return $this->db->query("SELECT * FROM tblnews WHERE Type='$title' AND Name LIKE '%$searching%' ORDER BY ID DESC LIMIT 2")->result();
+	}
 }
 
 

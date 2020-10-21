@@ -60,6 +60,12 @@ public function contact()
 		echo $email;
 	}
 }
+function news_later(){
+	if ($this->input->post('send')) {
+		$email=$this->input->post('email');
+		$this->register_model->news_later($email);
+	}
+}
 }
 
 
