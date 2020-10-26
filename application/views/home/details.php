@@ -26,7 +26,23 @@
    <!--================Blog Area =================-->
    <section class="blog_area single-post-area section-padding">
       <div class="container">
+          <?php if (!empty($this->session->userdata('success'))) {?>
+                  <div class="alert alert-success text-danger" role="alert">
+                    <?php echo $this->session->userdata('success'); 
+                    $this->session->unset_userdata('success');
+
+                    ?>
+                  </div>
+               <?php }?>
+               <?php if (!empty($this->session->userdata('success'))) {?>
+                  <div class="alert alert-danger text-dark" role="alert">
+                    <?php echo $this->session->userdata('error'); 
+                    $this->session->unset_userdata('error');
+                    ?>
+                  </div>
+               <?php }?>
          <div class="row">
+
             <div class="col-lg-8 posts-list">
                <div class="single-post">
                   <div class="feature-img">
@@ -37,21 +53,17 @@
                      </h2>
                         <?php echo $service->Description; ?>
                    
-                     <div class="quote-wrapper">
-                        <div class="quotes">
-                           <?php echo $service->Description; ?>
-                        </div>
-                     </div>
+                     
                      <?php echo $service->About; ?>
                   </div>
                </div>
                <div class="navigation-top">
                   <div class="d-sm-flex justify-content-between text-center">
-                     <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
+                     <!-- <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
                         people like this</p>
                      <div class="col-sm-4 text-center my-2 my-sm-0">
-                        <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
-                     </div>
+                        <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p>
+                     </div> -->
                      <ul class="social-icons">
                         <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -102,7 +114,7 @@
                      </div>
                   </div> -->
                </div>
-               <div class="blog-author">
+              <!--  <div class="blog-author">
                   <div class="media align-items-center">
                      <img src="<?php echo base_url();?>assets/home/img/blog/author.png" alt="">
                      <div class="media-body">
@@ -113,128 +125,98 @@
                            our dominion twon Second divided from</p>
                      </div>
                   </div>
-               </div>
+               </div> -->
                <div class="comments-area">
-                  <h4>05 Comments</h4>
+                  <!-- <h4>05 Comments</h4> -->
+                  <?php $id=base64_decode($this->input->get('id'));
+                  $comments=get_comment($id,5)->result();
+                   foreach ($comments as $comment) { 
+                     $sender_detail=get_users_detials($comment->Sender_id)->row();
+                     ?>
                   <div class="comment-list">
                      <div class="single-comment justify-content-between d-flex">
                         <div class="user justify-content-between d-flex">
                            <div class="thumb">
-                              <img src="<?php echo base_url();?>assets/home/img/comment/comment_1.png" alt="">
+                              <!-- <?php echo base_url(); ?>assets/home/img/service/<?php echo $sender_detail->Image; ?> -->
+                              <img src="<?php echo base_url(); ?>assets/home/img/service/<?php echo $sender_detail->Image; ?>" alt="">
                            </div>
                            <div class="desc">
                               <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
+                                 <?php echo $comment->Comment.'<br>'; 
+                                 for ($i=0; $i< $comment->Rating; $i++) {?> 
+
+                                 <i class="fa fa-star"></i>
+                              <?php } ?>
                               </p>
                               <div class="d-flex justify-content-between">
                                  <div class="d-flex align-items-center">
                                     <h5>
-                                       <a href="#">Emilly Blunt</a>
+                                       <a href="<?php echo base_url();?>details/<?php echo $site_data->Title; ?>?id=<?php echo base64_encode($sender_detail->ID); ?>"><?php echo $sender_detail->Name; ?></a>
                                     </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
+                                    <p class="date"><?php $date=strtotime($comment->Sent_on);
+                                    echo date('M d , Y h:i:s',$date);
+                                     ?>  </p>
                                  </div>
-                                 <div class="reply-btn">
+                                 <!-- <div class="reply-btn">
                                     <a href="#" class="btn-reply text-uppercase">reply</a>
-                                 </div>
+                                 </div> -->
                               </div>
                            </div>
                         </div>
                      </div>
                   </div>
-                  <div class="comment-list">
-                     <div class="single-comment justify-content-between d-flex">
-                        <div class="user justify-content-between d-flex">
-                           <div class="thumb">
-                              <img src="<?php echo base_url();?>assets/home/img/comment/comment_2.png" alt="">
-                           </div>
-                           <div class="desc">
-                              <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                              </p>
-                              <div class="d-flex justify-content-between">
-                                 <div class="d-flex align-items-center">
-                                    <h5>
-                                       <a href="#">Emilly Blunt</a>
-                                    </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                 </div>
-                                 <div class="reply-btn">
-                                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="comment-list">
-                     <div class="single-comment justify-content-between d-flex">
-                        <div class="user justify-content-between d-flex">
-                           <div class="thumb">
-                              <img src="<?php echo base_url();?>assets/home/img/comment/comment_3.png" alt="">
-                           </div>
-                           <div class="desc">
-                              <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                              </p>
-                              <div class="d-flex justify-content-between">
-                                 <div class="d-flex align-items-center">
-                                    <h5>
-                                       <a href="#">Emilly Blunt</a>
-                                    </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                 </div>
-                                 <div class="reply-btn">
-                                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
+               <?php } ?>
+                 
                </div>
+               <?php if (!empty($this->session->userdata('active_user'))) { ?>
                <div class="comment-form">
-                  <h4>Leave a Reply</h4>
-                  <form class="form-contact comment_form" action="#" id="commentForm">
+                  <h4>Send feedback</h4>
+                  <form class="form-contact comment_form" action="<?php echo base_url(); ?>register/user_comment" id="commentForm" method="post">
                      <div class="row">
+                        <input type="text" name="sender_id" value="<?php echo $this->session->userdata('active_user');?>" hidden="">
+                        <input type="text" name="reciever_id" value="<?php echo base64_decode($this->input->get('id')); ?>" hidden="">
+                        <div class="col-sm-4">
+                           <label>Your Rating</label>
+                        </div>
+                        <div class="col-sm-6">
+                           <div class="form-group">
+                              <select class="form-control" name="rating" id="name" title="Ratings" required="">
+                                 <option selected="" disabled="">Ratings</option>
+                                 <option value="1">1 Star</option>
+                                 <option value="2">2 Stars</option>
+                                 <option value="3">3 Stars</option>
+                                 <option value="4">4 Stars</option>
+                                 <option value="5">5 Stars</option>
+                              </select>
+                           </div>
+                        </div>
                         <div class="col-12">
+                           <label>Your feedback</label>
                            <div class="form-group">
                               <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                 placeholder="Write Comment"></textarea>
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="form-group">
-                              <input class="form-control" name="name" id="name" type="text" placeholder="Name">
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="form-group">
-                              <input class="form-control" name="email" id="email" type="email" placeholder="Email">
-                           </div>
-                        </div>
-                        <div class="col-12">
-                           <div class="form-group">
-                              <input class="form-control" name="website" id="website" type="text" placeholder="Website">
+                                 placeholder="Write Comment" required=""></textarea>
                            </div>
                         </div>
                      </div>
                      <div class="form-group">
-                        <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
+                        <button type="submit" class="button button-contactForm btn_1 boxed-btn" name="send">Send Message</button>
                      </div>
                   </form>
                </div>
+            <?php } else{ ?>
+               <div class="form-group">
+                       <a href="<?php echo base_url();?>main/<?php echo $site_data->Title; ?>/login"> <button class="button button-contactForm btn_1 boxed-btn" name="send">Send Feedback</button></a>
+                    </div>
+            <?php } ?>
             </div>
             <div class="col-lg-4">
                <div class="blog_right_sidebar">
                   <aside class="single_sidebar_widget search_widget">
-                     <form action="#">
+                     <form action="<?php echo base_url(); ?>register/<?php echo $site_data->Title; ?>/search_user" method="get">
                         <div class="form-group">
                            <div class="input-group mb-3">
                               <input type="text" class="form-control" placeholder='Search Keyword'
-                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'" name="searching">
                               <div class="input-group-append">
                                  <button class="btns" type="button"><i class="ti-search"></i></button>
                               </div>
@@ -245,7 +227,7 @@
                      </form>
                   </aside>
                   <aside class="single_sidebar_widget post_category_widget">
-                     <h4 class="widget_title">Category</h4>
+                     <h4 class="widget_title">Personal Info</h4>
                      <ul class="list cat-list">
                         <li>
                            <a href="#" class="d-flex">
@@ -277,81 +259,25 @@
                               <p style="padding-left: 50px;">Yes</p>
                            </a>
                         </li>
-                       <!--  <li>
-                           <a href="#" class="d-flex">
-                              <p>Health Care</p>
-                              <p>(21)</p>
-                           </a>
-                        </li> -->
                      </ul>
                   </aside>
                   <aside class="single_sidebar_widget popular_post_widget">
                      <h3 class="widget_title">Related Service Providers</h3>
+                     <?php $users=get_users($site_data->Title,5)->result(); 
+                     foreach ($users as $user) { ?>
                      <div class="media post_item">
-                        <img src="<?php echo base_url();?>assets/home/img/post/post_1.png" alt="post">
+                        <img src="<?php echo base_url();?>assets/home/img/service/<?php echo $user->Image; ?>" alt="post" width="30%">
                         <div class="media-body">
-                           <a href="single-blog.html">
-                              <h3>From life was you fish...</h3>
+                           <a href="<?php echo base_url();?>details/<?php echo $site_data->Title; ?>?id=<?php echo base64_encode($user->ID); ?>">
+                              <h3><?php echo $user->Name; ?></h3>
                            </a>
-                           <p>January 12, 2019</p>
+                           <p><?php $date=strtotime($user->Registered_date);
+                                    echo date('M d , Y',$date);
+                                     ?></p>
                         </div>
                      </div>
-                     <div class="media post_item">
-                        <img src="<?php echo base_url();?>assets/home/img/post/post_2.png" alt="post">
-                        <div class="media-body">
-                           <a href="single-blog.html">
-                              <h3>The Amazing Hubble</h3>
-                           </a>
-                           <p>02 Hours ago</p>
-                        </div>
-                     </div>
-                     <div class="media post_item">
-                        <img src="<?php echo base_url();?>assets/home/img/post/post_3.png" alt="post">
-                        <div class="media-body">
-                           <a href="single-blog.html">
-                              <h3>Astronomy Or Astrology</h3>
-                           </a>
-                           <p>03 Hours ago</p>
-                        </div>
-                     </div>
-                     <div class="media post_item">
-                        <img src="<?php echo base_url();?>assets/home/img/post/post_4.png" alt="post">
-                        <div class="media-body">
-                           <a href="single-blog.html">
-                              <h3>Asteroids telescope</h3>
-                           </a>
-                           <p>01 Hours ago</p>
-                        </div>
-                     </div>
-                  </aside>
-                  <aside class="single_sidebar_widget tag_cloud_widget">
-                     <h4 class="widget_title">Tag Clouds</h4>
-                     <ul class="list">
-                        <li>
-                           <a href="#">project</a>
-                        </li>
-                        <li>
-                           <a href="#">love</a>
-                        </li>
-                        <li>
-                           <a href="#">technology</a>
-                        </li>
-                        <li>
-                           <a href="#">travel</a>
-                        </li>
-                        <li>
-                           <a href="#">restaurant</a>
-                        </li>
-                        <li>
-                           <a href="#">life style</a>
-                        </li>
-                        <li>
-                           <a href="#">design</a>
-                        </li>
-                        <li>
-                           <a href="#">illustration</a>
-                        </li>
-                     </ul>
+                  <?php } ?>
+                     
                   </aside>
                   <aside class="single_sidebar_widget instagram_feeds">
                      <h4 class="widget_title">Instagram Feeds</h4>
@@ -389,16 +315,17 @@
                      </ul>
                   </aside>
                   <aside class="single_sidebar_widget newsletter_widget">
-                     <h4 class="widget_title">Newsletter</h4>
-                     <form action="#">
-                        <div class="form-group">
-                           <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                              onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
-                        </div>
-                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                           type="submit">Subscribe</button>
-                     </form>
-                  </aside>
+                            <h4 class="widget_title">Newsletter</h4>
+
+                            <form action="<?php echo base_url(); ?>register/<?php echo $site_data->Title; ?>/news_later" method="post">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" onfocus="this.placeholder = ''"
+                                        onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required name="email">
+                                </div>
+                                <input class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit" value="Subscribe" name="send">
+                            </form>
+                        </aside>
                </div>
             </div>
          </div>

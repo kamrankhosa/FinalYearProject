@@ -66,8 +66,11 @@
                 
                 </div>
                 <nav class="blog-pagination justify-content-center d-flex">
-                            <ul class="pagination">
-                                <li class="page-item">
+
+                            <!-- <ul class="pagination"> -->
+
+                                <?php echo $links; ?>
+                                <!-- <li class="page-item">
                                     <a href="#" class="page-link" aria-label="Previous">
                                         <i class="ti-angle-left"></i>
                                     </a>
@@ -82,8 +85,8 @@
                                     <a href="#" class="page-link" aria-label="Next">
                                         <i class="ti-angle-right"></i>
                                     </a>
-                                </li>
-                            </ul>
+                                </li> -->
+                            <!-- </ul> -->
                         </nav>
             </div>
         </div>

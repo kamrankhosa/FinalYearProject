@@ -1,6 +1,6 @@
 <?php $this->load->view('site_ajax.php'); ?>
-<footer class="dashboard">
-  <p>&copy 2020 Banado. All Rights Reserved | Design by Kamran Hyder</p>
+<footer class="dashboard bg-white">
+  <p>&copy 2020 Banado. All Rights Reserved | Design by <a href="https://web.facebook.com/kamrankhosa007/" target="_blank">Kamran Hyder</a></p>
 </footer>
 <!--footer section end-->
 <!-- move top -->
@@ -28,7 +28,15 @@
   }
 </script>
 <!-- /move top -->
-
+<script src="<?php echo base_url(); ?>assets/admin/plugins//ckeditor/ckeditor.js"></script>
+           <script>
+  var editor=CKEDITOR.replace( 'editorInput',{
+    extraPlugins : 'filebrowser',
+    filebrowserBrowseUrl:'browser.php?type=Images',
+    filebrowserUploadMethod:"form",
+    filebrowserUploadUrl:"<?php echo base_url(); ?>admin/imageUpload"
+  });
+</script>
 
 <script src="<?php echo base_url(); ?>assets/admin/js/jquery-3.3.1.min.js"></script>
 <script src="<?php echo base_url(); ?>assets/admin/js/jquery-1.10.2.min.js"></script>
@@ -85,7 +93,7 @@
 
     <!--END FOOTER -->
      <!-- GLOBAL SCRIPTS -->
-  <!--   <script src="<?php echo base_url(); ?>assets/admin/plugins/jquery-2.0.3.min.js"></script>
+ <!--    <script src="<?php echo base_url(); ?>assets/admin/plugins/jquery-2.0.3.min.js"></script>
      <script src="<?php echo base_url(); ?>assets/admin/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="<?php echo base_url(); ?>assets/admin/plugins/modernizr-2.6.2-respond-1.1.0.min.js"></script> -->
     <!-- END GLOBAL SCRIPTS -->
@@ -97,6 +105,13 @@
              $('#dataTables-example').dataTable();
          });
     </script>
+    <script>
+            window.setTimeout(function() {
+            $(".alert").fadeTo(500, 0).slideUp(500, function(){
+                $(this).remove(); 
+            });
+        }, 4000);
+        </script>
 </body>
 
 </html>

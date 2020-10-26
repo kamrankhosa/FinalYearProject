@@ -61,15 +61,15 @@
                                     </div>
                                     <!-- Map -->
                                     <div class="map-footer">
-                                        <img src="assets/img/gallery/map-footer.png" alt="">
+                                        <img src="<?php echo base_url(); ?>assets/home/img/gallery/map-footer.png" alt="">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- Copy-Right -->
                         <div class="row align-items-center">
-                            <div class="col-xl-12 ">
-                                <div class="footer-copy-right">
+                            <div class="col-xl-12">
+                                <div class="footer-copy-right text-center">
                                     <p>
   Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Kamran Hyder</a></p>
                                 </div>
@@ -117,7 +117,16 @@
         <script src="<?php echo base_url();?>assets/home/js/jquery.validate.min.js"></script>
         <script src="<?php echo base_url();?>assets/home/js/mail-script.js"></script>
         <script src="<?php echo base_url();?>assets/home/js/jquery.ajaxchimp.min.js"></script>
-        
+        <script src="<?php echo base_url(); ?>assets/admin/plugins//ckeditor/ckeditor.js"></script>
+           <script>
+  var editor=CKEDITOR.replace( 'editorInput',{
+    extraPlugins : 'filebrowser',
+    filebrowserBrowseUrl:'browser.php?type=Images',
+    filebrowserUploadMethod:"form",
+    filebrowserUploadUrl:"<?php echo base_url(); ?>admin/imageUpload"
+  });
+</script>
+
 		<!-- Jquery Plugins, main Jquery -->	
         <script src="<?php echo base_url();?>assets/home/js/plugins.js"></script>
         <script src="<?php echo base_url();?>assets/home/js/main.js"></script>

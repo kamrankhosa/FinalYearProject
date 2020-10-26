@@ -20,26 +20,26 @@ class Smtp_email{
  
 
 
-    $config = Array(
-      'protocol' => 'smtp',
-      'smtp_host' => 'mail.cytdigital.com',
-      'smtp_port' => 2525,
-      'smtp_user' => 'support@cytdigital.com', // change it to yours
-      'smtp_pass' => 'R2jHH~iEofWQ', // change it to yours
-      'mailtype' => 'html',
-      'charset' => 'utf-8',
-      'wordwrap' => TRUE
-    );
+    // $config = Array(
+    //   'protocol' => 'smtp',
+    //   'smtp_host' => 'mail.cytdigital.com',
+    //   'smtp_port' => 2525,
+    //   'smtp_user' => 'support@cytdigital.com', // change it to yours
+    //   'smtp_pass' => 'R2jHH~iEofWQ', // change it to yours
+    //   'mailtype' => 'html',
+    //   'charset' => 'utf-8',
+    //   'wordwrap' => TRUE
+    // );
 
 
 
 
-   // $config = array (
+   $config = array (
 
-   //   'mailtype' => 'html',
-   //   'charset'  => 'utf-8',
-   //   'priority' => '1'
-   //    ); 
+     'mailtype' => 'html',
+     'charset'  => 'utf-8',
+     'priority' => '1'
+      ); 
 
         $ci =& get_instance();    
         $ci->load->library('email');

@@ -56,17 +56,21 @@ $route['translate_uri_dashes'] = FALSE;
 $route['main'] = 'home/home';
 $route['main/(:any)'] = 'home/home';
 $route['services/(:any)'] = 'home/services';
+$route['services/(:any)/(:num)'] = 'home/services';
 $route['details/(:any)'] = 'home/details';
 $route['about/(:any)'] = 'about/index';
 $route['main/(:any)/contact'] = 'home/contact';
 $route['main/(:any)/projects'] = 'home/projects';
 $route['main/(:any)/register'] = 'home/register';
+$route['main/(:any)/login'] = 'home/login';
 $route['projects/(:any)'] = 'home/projects';
 $route['blogs/(:any)'] = 'home/news';
 $route['project_details/(:any)'] = 'home/project_details';
 $route['blog_details/(:any)'] = 'home/blog_details';
+$route['user_logout/(:any)'] = 'home/user_logout';
 
 $route['register/(:any)/search_blogs'] = 'home/search_blogs';
+$route['register/(:any)/search_user'] = 'home/search_user';
 $route['register/(:any)/news_later'] = 'register/news_later';
 
 $route['admin'] = 'admin';

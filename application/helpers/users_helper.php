@@ -8,7 +8,7 @@
 
 function get_users($title,$limit){
 	 $CI =& get_instance();
-	return $CI->db->query("SELECT * FROM tbl_users_list WHERE Type='$title' LIMIT $limit");
+	return $CI->db->query("SELECT * FROM tbl_users_list INNER JOIN tbl_users_details ON tbl_users_list.ID=tbl_users_details.Service_id WHERE tbl_users_list.Type='$title' LIMIT $limit");
 
 }
 function get_aal_users($title){
@@ -33,6 +33,11 @@ function delete_user($id){
 		}
 				
 	}
+}
+function get_active_admin_details(){
+	$CI =& get_instance();
+	$id=$CI->session->userdata('active_admin');
+	return $CI->db->query("SELECT * FROM tbl_admin WHERE ID='$id'");
 }
 
 
