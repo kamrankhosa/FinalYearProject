@@ -36,7 +36,7 @@
                     </div>
                     <div class="col-lg-8 jumbotron bg-success">
 
-<form action="<?php echo base_url(); ?>admin/update_blog" method="post" enctype="multipart/form-data">
+<form action="<?php echo base_url(); ?>admin/update_project" method="post" enctype="multipart/form-data">
 			<input type="text" name="id" hidden="" value="<?php echo $blog->ID; ?>">
                <div class="form-group">
                             <label for="exampleInputEmail1" class="input__label">Heading</label>

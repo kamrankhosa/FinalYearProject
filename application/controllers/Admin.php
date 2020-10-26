@@ -259,7 +259,7 @@ function edit_blog(){
 	$blog_id=base64_decode($this->input->get('id'));
 	$id=$this->session->userdata('active_admin');
 	$result['admin']=get_admin_detail($id)->row();
-	$result['blogs']=blog_details($id)->result();
+	$result['blogs']=blog_details($blog_id)->result();
 	$this->load->view('admin/edit_blog',$result);
 	}
 		else{
@@ -314,12 +314,55 @@ function edit_project(){
 	$blog_id=base64_decode($this->input->get('id'));
 	$id=$this->session->userdata('active_admin');
 	$result['admin']=get_admin_detail($id)->row();
-	$result['blog']=project_details($id)->row();
+	$result['blog']=project_details($blog_id)->row();
 	$this->load->view('admin/edit_project',$result);
 	}
 		else{
 			redirect('admin');
 		}
+}
+
+function update_project(){
+	if (!empty($this->session->userdata('active_admin'))) {
+		if ($this->input->post('update_blog')) {
+		$blog_id=$this->input->post('id');
+		$heading=$this->input->post('heading');
+		$type=$this->input->post('type');
+		$description=$this->input->post('editorInput');
+		$path ='./assets/home/img/david/';
+		      $this->load->library('upload');
+		      $check=array(
+		        "upload_path"       =>  $path,
+		        "allowed_types"     =>  'jpeg|jpg|png',
+		        "encrypt_name"      =>  true
+		      );
+		      
+      if($this->upload->initialize($check) != true){
+       $this->session->set_userdata('error','Sorry ! file type does not match');
+				redirect('home');
+
+      }
+
+      else{
+if ($this->upload->do_upload('BlogProfile')!='') {
+      if($this->upload->do_upload('BlogProfile'))
+      {
+        $upload_data = $this->upload->data();
+         $BlogProfile =$upload_data['file_name'];
+         $this->admin_model->update_project($blog_id,$heading,$type,$description,$BlogProfile);
+     }
+ }
+ else{
+         $this->admin_model->update_project1($blog_id,$heading,$type,$description);
+
+ }
+}
+		}
+	}
+		else{
+			redirect('admin');
+		}
+
 }
 
 }

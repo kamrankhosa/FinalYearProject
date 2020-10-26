@@ -87,7 +87,7 @@ if (empty($this->session->userdata('active_admin'))) {
           <a href="#"><i class="fa fa-cogs"></i>
             <span>Settings <i class="lnr lnr-chevron-right"></i></span></a>
           <ul class="sub-menu-list">
-            <li><a href="carousels.html">Site Setting</a> </li>
+            <!-- <li><a href="carousels.html">Site Setting</a> </li> -->
             <li><a href="#" data-toggle="modal" data-target="#exampleModalCenterProfileSetting">Profile Setting</a> </li>
             <!-- <li><a href="cards.html">HTTP Setting</a> </li> -->
           </ul>
@@ -114,16 +114,16 @@ if (empty($this->session->userdata('active_admin'))) {
     <!-- notification menu start -->
     <div class="menu-right">
       <div class="navbar user-panel-top">
-        <div class="search-box">
+        <!-- <div class="search-box">
           <form action="#search-results.html" method="get">
             <input class="search-input" placeholder="Search Here..." type="search" id="search">
             <button class="search-submit" value=""><span class="fa fa-search"></span></button>
           </form>
-        </div>
+        </div> -->
         <div class="user-dropdown-details d-flex">
           <div class="profile_details_left">
             <ul class="nofitications-dropdown">
-              <li class="dropdown">
+              <!-- <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
                     class="fa fa-bell-o"></i><span class="badge blue">3</span></a>
                 <ul class="dropdown-menu">
@@ -159,7 +159,7 @@ if (empty($this->session->userdata('active_admin'))) {
                     </div>
                   </li>
                 </ul>
-              </li>
+              </li> -->
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false"><i
                     class="fa fa-comment-o"></i><span class="badge blue"><?php echo get_table_data('tblcontact_messages')->num_rows(); ?></span></a>

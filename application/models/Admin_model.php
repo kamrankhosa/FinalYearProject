@@ -115,6 +115,23 @@ class Admin_model extends CI_Model
 			redirect($url);
 		}
 	}
+
+	function update_project($blog_id,$heading,$type,$description,$BlogProfile){
+		$url= $_SERVER['HTTP_REFERER'];
+		$updated=$this->db->query("UPDATE `tblprojects` SET `Name`='$heading',`Description`='$description',`Image`='$BlogProfile',`Type`='$type' WHERE `ID`='$blog_id'");
+		if ($updated) {
+			$this->session->set_flashdata('success','Project has been updated successfully.');
+			redirect($url);
+		}
+	}
+	function update_project1($blog_id,$heading,$type,$description){
+		$url= $_SERVER['HTTP_REFERER'];
+		$updated=$this->db->query("UPDATE `tblprojects` SET `Name`='$heading',`Description`='$description',`Type`='$type' WHERE `ID`='$blog_id'");
+		if ($updated) {
+			$this->session->set_flashdata('success','Project has been updated successfully.');
+			redirect($url);
+		}
+	}
 }
 
 
